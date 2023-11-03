@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<link rel="stylesheet" href="style.css">
+		<script async src="code.js"></script>
+		<title>Light Box Console</title>
+	</head>
+	<body>
+		<div id="app">
+			<div id="app-wrap">
+				<div id="wifi">
+					<header>
+						<h1>Wi-Fi</h1>
+					</header>
+				</div>
+				<div id="connect_manual">
+					<header>
+						<h1>Enter Wifi Details</h1>
+					</header>
+					<section>
+						<input id="wifi_ssid" type="text" placeholder="SSID" value="default_ssid">
+						<input id="wifi_pwd" type="password" placeholder="Password" value="default_password">
+					</section>
+					<div class="buttons">
+						<input id="wifi_save" type="button" value="Save" data-connect="wifi_save"/>
+					</div>
+				</div>
+				<div id="reset_manual">
+					<div class="buttons">
+						<input id="restart_unit" type="button" value="Restart" data-connect="restart_unit"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="credits">
+			<header>
+				<h1>About this app...</h1>
+			</header>
+			<h2></h2>
+			<section>
+				<p><strong>Light Box Console</strong>, &copy; 2023-2024, Steven Foong</p>
+			</section>
+		</div>
+	</body>
+<html>

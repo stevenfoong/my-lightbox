@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.5)
+
+add_definitions(-DLV_LVGL_H_INCLUDE_SIMPLE)
+include($ENV{IDF_PATH}/tools/cmake/project.cmake)
+project(lcd_lvgl)
+
+
+# As the upstream LVGL library has build warnings in esp-idf build system, this is only for temporarily workaround
+# Will remove this workaround when upstream LVGL fixes the warnings in the next release
+# idf_component_get_property(lvgl_lib lvgl__lvgl COMPONENT_LIB)
+# target_compile_options(${lvgl_lib} PRIVATE "-Wno-empty-body" "-Wno-strict-prototypes")
+
+# Create a SPIFFS image from the contents of the 'font' directory
+# that fits the partition named 'storage'. FLASH_IN_PROJECT indicates that
+# the generated image should be flashed when the entire project is flashed to
+# the target with 'idf.py -p PORT flash
+spiffs_create_partition_image(stock data FLASH_IN_PROJECT)
+# fatfs_create_spiflash_image(data data [FLASH_IN_PROJECT])
